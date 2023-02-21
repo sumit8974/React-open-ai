@@ -20,7 +20,7 @@ function App() {
     const question = userInput;
     setUserInput("");
     // API request
-    const response = await fetch("https://open-ai-ia7z.onrender.com", {
+    const response = await fetch("ADD THE API ROUTE OF OPEN AI", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
