@@ -20,7 +20,7 @@ function App() {
     const question = userInput;
     setUserInput("");
     // API request
-    const response = await fetch("ADD THE API ROUTE OF OPEN AI", {
+    const response = await fetch("http://localhost:5000", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

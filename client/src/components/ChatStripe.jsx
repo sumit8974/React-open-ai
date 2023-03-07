@@ -1,17 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "./Chat.css";
 import Spinner from "react-bootstrap/Spinner";
 import "bootstrap/dist/css/bootstrap.css";
 import { TypeAnimation } from "react-type-animation";
 const ChatStripe = ({ isLoading, chats }) => {
   const scrollRef = useRef(null);
-  const [height, setHeight] = useState(0);
+  let writing = false;
   const scrollToBottom = () => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   };
   useEffect(() => {
+    writing = true;
+    const interval = setInterval(() => {
+      if (!writing) {
+        clearInterval(interval);
+        return;
+      }
+      scrollToBottom();
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [isLoading]);
+  useEffect(() => {
     scrollToBottom();
   }, [isLoading]);
+
   return (
     <>
       {chats?.map((chat, index) => {
@@ -35,6 +47,7 @@ const ChatStripe = ({ isLoading, chats }) => {
                       `${chat.msg}`,
                       1000,
                       () => {
+                        writing = false;
                         scrollToBottom();
                       },
                     ]}
