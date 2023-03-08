@@ -65,7 +65,7 @@ const ChatStripe = ({ isLoading, chats }) => {
         <div className="wrapper ai">
           <div className="chat">
             <div className="profile">
-              <img src="../../src/assets/bot.svg" alt="..."></img>
+              <img src="bot.svg" alt="..."></img>
             </div>
             <div className="message">
               <Spinner animation="border" variant="light" />
