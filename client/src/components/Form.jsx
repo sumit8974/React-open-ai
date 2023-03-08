@@ -20,7 +20,7 @@ const Form = ({ userData, setInput, clickButton }) => {
         onKeyDown={handleKey}
       ></textarea>
       <button type="submit" onClick={clickButton}>
-        <img src="../../src/assets/send.svg" alt="....."></img>
+        <img src="send.svg" alt="....."></img>
       </button>
     </div>
   );
