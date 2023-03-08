@@ -36,7 +36,7 @@ const ChatStripe = ({ isLoading, chats }) => {
             <div className="chat">
               <div className="profile">
                 <img
-                  src={`../../src/assets/${chat.isAi ? "bot.svg" : "user.svg"}`}
+                  src={`${chat.isAi ? "bot.svg" : "user.svg"}`}
                   alt="..."
                 ></img>
               </div>
