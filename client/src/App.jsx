@@ -20,7 +20,7 @@ function App() {
     const question = userInput;
     setUserInput("");
     // API request
-    const response = await fetch("http://localhost:5000", {
+    const response = await fetch("https://open-ai-ia7z.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
